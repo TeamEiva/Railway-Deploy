@@ -1,8 +1,9 @@
-FROM python:latest
+FROM paman7647/amanpandey:speedo-buster-3.9
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get install -y ffmpeg python3-pip opus-tools git
-ENV PYTHONUNBUFFERED=1
+RUN apt-get install -y ffmpeg git
 RUN pip install -r https://raw.githubusercontent.com/TeamEiva/EivaBot/main/requirements.txt
 COPY . .
+COPY ./Eiva.sh .
+ADD ./Eiva.sh .
 CMD ["bash","Eiva.sh"]
 # Team Eiva 
